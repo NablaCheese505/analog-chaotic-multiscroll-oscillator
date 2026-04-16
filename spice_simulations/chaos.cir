@@ -1,0 +1,40 @@
+Práctica de atractor multiscroll
+
+; Fuentes de alimentación
+Vss vss 0 -6.4
+Vdd vdd 0 6.4
+
+; Generador de tanh(x) y sumador de corrientes
+Rx    x   a1    981          ; parte de tanh: resistencia de entrada
+Rax   a1  a2    1e6       ; resistencia de realimentación para tanh
+X1    0   a1    vdd  vss  a2 TL081
+Ra    a2  a     100e3        ; salida de tanh (nodo a) al sumador
+
+; Integrador 1: i(x) -> z
+C1    a   b     10e-9 ic=0.1 ; capacitor entre salida b y entrada a
+X2    0   a     vdd  vss  b TL081
+R1    a   b     20e3         ; disipación a·C
+
+; Integrador 2: z -> -y
+R4    b   c     10e3
+C2    c   d     10e-9 ic=0.25
+X3    0   c     vdd  vss  d TL081
+R5    d   e     10e3
+R6    e   f     10e3
+X4    0   e     vdd  vss  f TL081
+R2    a   f     19.61e3         ; realimentación de y al sumador
+
+; Integrador 3: y -> -x
+R7    f   g     10e3
+C3    g   h     10e-9 ic=0.35
+X5    0   g     vdd  vss  h TL081
+Rxx   a   x     20.6e3         ; realimentación de x al sumador
+R8    h   i     10e3
+R9    i   x     10e3
+X6    0   i     vdd  vss  x TL081
+
+; Simulación y visualización
+#autoplot 1 X=V(x) V(f)        ; ventana 1: x(t) y f(t) (y con signo corregido)
+.tran 0.1m 500ms 100m
+.probe
+.end
