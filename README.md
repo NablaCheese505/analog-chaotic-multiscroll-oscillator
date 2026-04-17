@@ -58,7 +58,7 @@ To replicate the physical circuit, the system is divided into the main integrato
   <table>
     <tr>
       <td align="center"><b>Main Oscillator Circuit</b><br><img src="./media/schematic.png" width="500"></td>
-      <td align="center"><b>Non-Linear Function Block $S_F(x)$</b><br><img src="./media/SFxSchematic.png" width="300"></td>
+      <td align="center"><b>Non-Linear Function Block S<sub>F</sub>(x)</b><br><img src="./media/SFxSchematic.png" width="300"></td>
     </tr>
   </table>
 </div>
@@ -98,7 +98,7 @@ Comparing the theoretical attractor shape against the simulated electronics and 
   </table>
 </div>
 
-### Time-Domain Response ($x(t)$ & $y(t)$)
+### Time-Domain Response ($x(t)$ & y(t))
 Analyzing the chaotic oscillation amplitude and frequencies over time:
 
 <div align="center">
