@@ -8,6 +8,11 @@
 
 <br>
 
+<div align="center">
+  <img src="./media/circuit.png" alt="Physical Circuit on Breadboard" width="500">
+  <p><i>The complete analog circuit implemented on a breadboard.</i></p>
+</div>
+
 ## 📖 Description
 A comprehensive analog engineering project focused on the design, simulation, and physical implementation of a Lu Chen multiscroll chaotic oscillator. Chaotic systems are widely studied in electronics for their potential in secure communications, random number generation, and modeling of non-linear phenomena.
 
